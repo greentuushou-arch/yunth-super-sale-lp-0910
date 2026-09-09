@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yunth 楽天スーパーSALE会場｜9/3(木)限定チャンスタイム＋9/4-9/11 20%OFFクーポン</title>
+<meta name="description" content="Yunthの楽天スーパーSALE特設会場。9月3日(木)10:00〜23:59はYunth美容液がチャンスタイム、9/4(金)20:00〜9/11(金)1:59は20%OFFクーポン+ポイント10倍。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --red:#F01D24;
+  --pink:#FF3D6F;
+  --pink-red:#F0294F;
+  --pale:#FFE9EC;
+  --white:#FFFFFF;
+  --ink:#3A2530;
+  --ink-soft:#7A6169;
+  --plum:#5B4A54;
+  --line:rgba(58,37,48,.12);
+}
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; background:var(--pink-red); color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif;
+  -webkit-font-smoothing:antialiased; font-size:16px;
+}
+img{ max-width:100%; display:block; }
+a{ text-decoration:none; color:inherit; }
+.ys-num{ font-family:"Josefin Sans",sans-serif; font-weight:700; }
+
+.ys-wrap{ max-width:780px; margin:0 auto; background:var(--white); position:relative; overflow:hidden; }
+@media screen and (min-width:800px){
+  .ys-wrap{ box-shadow:0 0 60px rgba(0,0,0,.3); }
+}
+
+/* ===================== ヘッダー ===================== */
+.ys-header{ display:flex; align-items:center; justify-content:space-between; padding:14px 20px; background:var(--white); border-bottom:1px solid var(--line); }
+.ys-header-logo{ height:22px; width:auto; display:block; }
+.ys-header-tag{ font-size:.66rem; font-weight:700; color:var(--pink); letter-spacing:.03em; }
+
+/* ===================== FV ===================== */
+.ys-hero{ position:relative; background:var(--red); }
+.ys-hero-media{ position:relative; overflow:hidden; }
+.ys-hero-media img{ width:100%; display:block; }
+
+.ys-hero-confetti{ position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:3; }
+.ys-confetti-piece{ position:absolute; top:-20px; opacity:0; will-change:transform,opacity; }
+.ys-hero-confetti.is-play .ys-confetti-piece{ animation-name:ys-confetti-fall; animation-timing-function:ease-in; animation-fill-mode:forwards; }
+@keyframes ys-confetti-fall{
+  0%{ transform:translate(0,0) rotate(0deg); opacity:1; }
+  85%{ opacity:1; }
+  100%{ transform:translate(var(--ys-drift),var(--ys-fall)) rotate(var(--ys-rot)); opacity:0; }
+}
+
+/* 画像内の「クーポン獲得はこちら」ボタン位置に重ねる実クリック領域(視覚効果なし・完全に透明) */
+.ys-hero-cta{
+  position:absolute; left:4%; right:3.9%; top:93%; height:3.7%;
+  border-radius:999px; z-index:2;
+}
+.ys-hero-cta.is-ended{ pointer-events:none; }
+
+/* ===================== タイマー(目立たせる) ===================== */
+.ys-timer{
+  position:relative; background:var(--plum); padding:22px 20px 26px; text-align:center;
+}
+.ys-timer-inner{ position:relative; z-index:1; }
+.ys-timer-label{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px; font-size:.94rem; font-weight:700;
+  color:var(--white); background:var(--pink); border-radius:999px; padding:10px 16px; margin:0 0 16px;
+  letter-spacing:0; max-width:98%; line-height:1.4; text-align:center; white-space:nowrap;
+}
+@media screen and (max-width:340px){
+  .ys-timer-label{ font-size:.8rem; padding:9px 12px; }
+}
+.ys-timer-sub{ font-size:.78rem; font-weight:700; color:rgba(255,255,255,.75); margin:0 0 18px; letter-spacing:.03em; }
+.ys-timer-digits{ display:flex; align-items:flex-end; justify-content:center; gap:10px; }
+.ys-timer-seg{ display:flex; flex-direction:column; align-items:center; min-width:72px; }
+.ys-timer-seg b{
+  font-size:3.2rem; line-height:1; color:var(--white); background:rgba(255,255,255,.08);
+  border:2px solid var(--pink); border-radius:12px; padding:12px 6px; width:100%;
+  box-shadow:0 8px 20px rgba(255,61,111,.35);
+}
+.ys-timer-seg small{ font-size:.66rem; font-weight:700; color:rgba(255,255,255,.7); margin-top:6px; letter-spacing:.05em; }
+.ys-timer-sep{ font-size:2.2rem; font-weight:700; color:var(--pink); align-self:center; margin-bottom:26px; }
+.ys-timer-ended-note{ display:none; font-size:.78rem; font-weight:700; color:rgba(255,255,255,.85); margin-top:16px; line-height:1.8; }
+.ys-timer.is-ended .ys-timer-digits,
+.ys-timer.is-ended .ys-timer-sub{ display:none; }
+.ys-timer.is-ended .ys-timer-ended-note{ display:block; }
+
+/* ===================== 商品一覧 ===================== */
+.ys-products{ background:var(--pale); padding:36px 18px 48px; }
+.ys-banner{ margin:0 0 32px; border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(58,37,48,.14); }
+.ys-banner img{ width:100%; display:block; }
+.ys-banner-gap{ margin-top:44px; }
+
+/* クーポンバナー(定番アイテムのセールバナー下) */
+.ys-coupon-banner{
+  display:flex; align-items:center; gap:14px; text-decoration:none;
+  background:linear-gradient(120deg, var(--red), var(--pink));
+  border-radius:16px; padding:16px 18px; margin:0 0 28px; color:var(--white);
+  box-shadow:0 6px 18px rgba(240,29,36,.3); transition:transform .2s, box-shadow .2s;
+}
+.ys-coupon-banner:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(240,29,36,.4); }
+.ys-coupon-banner-badge{
+  flex:0 0 auto; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  width:60px; height:60px; border-radius:50%; background:rgba(255,255,255,.16);
+  border:2px solid rgba(255,255,255,.65);
+}
+.ys-coupon-banner-badge .ys-num{ font-size:1.3rem; font-weight:900; line-height:1; color:var(--white); }
+.ys-coupon-banner-badge small{ font-size:.56rem; font-weight:900; letter-spacing:.02em; }
+.ys-coupon-banner-text{ flex:1; min-width:0; }
+.ys-coupon-banner-title{ font-size:.72rem; font-weight:700; margin:0 0 3px; opacity:.92; }
+.ys-coupon-banner-sub{ font-size:1.02rem; font-weight:900; margin:0; line-height:1.3; }
+.ys-coupon-banner-arrow{ flex:0 0 auto; font-size:1.3rem; font-weight:900; }
+.ys-cat-title{
+  font-size:1.3rem; font-weight:900; color:var(--ink); text-align:center;
+  margin:0 0 18px; position:relative; padding-bottom:10px;
+}
+.ys-cat-title::after{
+  content:''; position:absolute; left:50%; bottom:0; transform:translateX(-50%);
+  width:44px; height:4px; border-radius:2px; background:var(--pink);
+}
+.ys-products h2.ys-cat-title:not(:first-child){ margin-top:36px; }
+
+.ys-pgrid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.ys-pcard{
+  display:block; background:var(--white); border-radius:16px; overflow:hidden;
+  box-shadow:0 4px 14px rgba(58,37,48,.1); transition:transform .2s, box-shadow .2s;
+}
+.ys-pcard:hover{ transform:translateY(-3px); box-shadow:0 10px 22px rgba(58,37,48,.16); }
+.ys-pcard-img{ aspect-ratio:1/1; overflow:hidden; background:var(--pale); }
+.ys-pcard-img img{ width:100%; height:100%; object-fit:cover; }
+.ys-pcard-body{ padding:10px 12px 14px; }
+.ys-pcard-name{
+  font-size:.76rem; font-weight:700; line-height:1.55; color:var(--ink);
+  margin:0 0 8px; min-height:2.4em; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+  word-break:keep-all; overflow-wrap:break-word;
+}
+.ys-annot{ font-size:.65em; font-weight:700; vertical-align:super; line-height:0; }
+.ys-pcard-price{ font-size:.92rem; font-weight:900; color:var(--pink); margin:0 0 10px; }
+.ys-pcard-price .ys-num{ font-size:1.05em; }
+.ys-pcard-btn{
+  display:block; text-align:center; background:linear-gradient(120deg, var(--pink), var(--red));
+  color:var(--white); font-size:.72rem; font-weight:900; border-radius:999px; padding:9px;
+}
+
+.ys-footnote{ font-size:.66rem; font-weight:500; color:var(--ink-soft); margin:14px 2px 0; line-height:1.6; }
+
+/* 秋のときめきダイアリー バナー(2つのクーポンチケットのみ画像を切り出して個別リンク化) */
+.ys-tokimeki-banner{ margin:36px 0 0; border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(58,37,48,.14); }
+.ys-tokimeki-banner img{ width:100%; display:block; }
+.ys-tokimeki-banner a{ display:block; transition:opacity .2s; }
+.ys-tokimeki-banner a:hover{ opacity:.88; }
+
+/* 横長カード(定番アイテムの下に1列ずつ配置) */
+.ys-wide-list{ display:flex; flex-direction:column; gap:16px; margin-top:36px; }
+.ys-wide-card{
+  display:flex; align-items:stretch; background:var(--white); border-radius:16px; overflow:hidden;
+  box-shadow:0 4px 14px rgba(58,37,48,.1); position:relative; transition:transform .2s, box-shadow .2s;
+}
+.ys-wide-card:hover{ transform:translateY(-3px); box-shadow:0 10px 22px rgba(58,37,48,.16); }
+.ys-wide-img{ flex:0 0 46%; max-width:46%; aspect-ratio:1/1; overflow:hidden; background:var(--pale); }
+.ys-wide-img img{ width:100%; height:100%; object-fit:cover; }
+.ys-wide-badge{
+  display:inline-block; align-self:flex-start; max-width:100%;
+  background:linear-gradient(120deg, var(--red), var(--pink)); color:var(--white);
+  font-weight:900; font-size:.92rem; line-height:1.25; text-align:center;
+  padding:8px 14px; border-radius:10px; box-shadow:0 4px 10px rgba(240,29,36,.4); letter-spacing:.01em;
+  margin:0 0 10px;
+}
+.ys-wide-body{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:12px 12px; min-width:0; }
+.ys-wide-name{
+  font-size:.76rem; font-weight:700; line-height:1.45; color:var(--ink); margin:0 0 6px;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+  word-break:keep-all; overflow-wrap:break-word;
+}
+.ys-wide-price{ font-size:.96rem; font-weight:900; color:var(--pink); margin:0 0 8px; }
+.ys-wide-price .ys-num{ font-size:1.1em; }
+.ys-wide-period{ font-size:.62rem; font-weight:700; color:var(--ink-soft); margin:-2px 0 8px; line-height:1.5; }
+.ys-wide-btn{
+  align-self:flex-start; background:linear-gradient(120deg, var(--pink), var(--red));
+  color:var(--white); font-size:.7rem; font-weight:900; border-radius:999px; padding:7px 16px;
+}
+
+@media screen and (min-width:600px){
+  .ys-timer-seg b{ font-size:3.8rem; padding:16px 10px; }
+  .ys-timer-seg{ min-width:88px; }
+  .ys-timer-label{ font-size:1.35rem; }
+  .ys-products{ padding:52px 32px 64px; }
+  .ys-pgrid{ grid-template-columns:repeat(3,1fr); gap:20px; }
+  .ys-pgrid.ys-pgrid-fixed2{ grid-template-columns:1fr 1fr; max-width:560px; margin:0 auto; }
+  .ys-cat-title{ font-size:1.6rem; }
+  .ys-banner-gap{ margin-top:64px; }
+  .ys-coupon-banner{ padding:20px 26px; gap:20px; margin-bottom:36px; }
+  .ys-coupon-banner-badge{ width:76px; height:76px; }
+  .ys-coupon-banner-badge .ys-num{ font-size:1.6rem; }
+  .ys-coupon-banner-badge small{ font-size:.68rem; }
+  .ys-coupon-banner-title{ font-size:.86rem; }
+  .ys-coupon-banner-sub{ font-size:1.3rem; }
+  .ys-coupon-banner-arrow{ font-size:1.6rem; }
+  .ys-wide-list{ margin-top:48px; gap:20px; }
+  .ys-wide-img{ flex:0 0 40%; max-width:40%; }
+  .ys-wide-body{ padding:20px 26px; }
+  .ys-wide-name{ font-size:1rem; }
+  .ys-wide-price{ font-size:1.3rem; }
+  .ys-wide-badge{ font-size:1.25rem; padding:10px 18px; margin-bottom:14px; }
+  .ys-wide-btn{ font-size:.82rem; padding:10px 22px; }
+}
+</style>
+</head>
+<body>
+<div class="ys-wrap">
+
+  <header class="ys-header">
+    <a href="https://www.rakuten.co.jp/yunth" target="_blank" rel="noopener" aria-label="Yunth 楽天市場店トップページ">
+      <img src="images/logo.png" alt="Yunth" class="ys-header-logo">
+    </a>
+    <span class="ys-header-tag">楽天スーパーSALE会場</span>
+  </header>
+
+  <!-- ============================================================
+       タイマー(9/10(木)0:00〜9/11(金)1:59の期間終了まで) — FV画像の直前
+       ============================================================ -->
+  <section class="ys-timer" id="ysTimer">
+    <div class="ys-timer-inner">
+      <p class="ys-timer-label" id="ysTimerLabel">9/10-9/11限定！先着3000名様セット終了まで</p>
+      <p class="ys-timer-sub">9月10日(木) 0:00〜9月11日(金)1:59限定</p>
+      <div class="ys-timer-digits" id="ysTimerDigits">
+        <div class="ys-timer-seg"><b class="ys-num" id="ysD">00</b><small>日</small></div>
+        <span class="ys-timer-sep">:</span>
+        <div class="ys-timer-seg"><b class="ys-num" id="ysH">00</b><small>時間</small></div>
+        <span class="ys-timer-sep">:</span>
+        <div class="ys-timer-seg"><b class="ys-num" id="ysM">00</b><small>分</small></div>
+        <span class="ys-timer-sep">:</span>
+        <div class="ys-timer-seg"><b class="ys-num" id="ysS">00</b><small>秒</small></div>
+      </div>
+      <p class="ys-timer-ended-note">9/10-9/11の期間は終了しました。<br>ご覧いただきありがとうございました。</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ファーストビュー(1枚の告知画像+実クリック領域を重ねる)
+       ============================================================ -->
+  <section class="ys-hero">
+    <div class="ys-hero-media">
+      <img src="images/hero/yunthss-fv.jpg" alt="楽天スーパーSALE 9/4(金)20:00〜9/11(金)1:59 Yunth各種美容液が20%OFFクーポン+ポイント10倍。さらに9/10(木)0:00〜9/11(金)1:59は、美容液の特別セットを無くなり次第終了・先着3000名様にプレゼント。">
+      <div class="ys-hero-confetti" id="ysHeroConfetti" aria-hidden="true"></div>
+      <!-- ▼画像内の「クーポン獲得はこちら」ボタンの上に重なる実際のリンク。COUPON_URL確定後に差し替え -->
+      <a href="#" class="ys-hero-cta" data-coupon aria-label="クーポン獲得はこちら"></a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       商品一覧(美容液 / 定番アイテム)
+       ============================================================ -->
+  <section class="ys-products">
+
+    <h2 class="ys-cat-title">美容液</h2>
+    <div class="ys-pgrid ys-pgrid-fixed2">
+
+      <a href="https://item.rakuten.co.jp/yunth/10000000/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/10000000.jpg" alt="Yunth 生ビタミンC 美白美容液 1ml×28包" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth 生ビタミンC<sup class="ys-annot">※1</sup> 美白<sup class="ys-annot">※2</sup>美容液 1ml×28包</p>
+          <p class="ys-pcard-price"><span class="ys-num">3,960</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/yb-126-001/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/yb-126-001.jpg" alt="Yunth 生PDRN美容液 1ml×28包" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth 生PDRN<sup class="ys-annot">※3</sup>美容液 1ml×28包</p>
+          <p class="ys-pcard-price"><span class="ys-num">3,960</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <p class="ys-footnote">※1 アスコルビン酸　※2 メラニンの生成を抑え、シミ・そばかすを防ぐ　※3 DNA-Na(保湿)</p>
+
+    <!-- ▼9/10(木)0:00〜9/11(金)1:59 20%OFFクーポン+ポイント最大15倍+PDRNパウチ特別セット バナー(定番アイテムの見出しを兼ねる) -->
+    <div class="ys-banner ys-banner-gap">
+      <img src="images/banner/yunth-sale-925-905.jpg" alt="9/10(木)0:00〜9/11(金)1:59 20%OFFクーポン+ポイント最大15倍+PDRNパウチ特別セット">
+    </div>
+
+    <a href="https://coupon.rakuten.co.jp/getCoupon?getkey=NU9HVS1aNUQwLU1LQ0wtUks3Tg--&rt=&rd=https://www.rakuten.ne.jp/gold/yunth/event/2609ss/index.html" target="_blank" rel="noopener" class="ys-coupon-banner">
+      <div class="ys-coupon-banner-badge"><span class="ys-num">20</span><small>%OFF</small></div>
+      <div class="ys-coupon-banner-text">
+        <p class="ys-coupon-banner-title">対象商品に使える</p>
+        <p class="ys-coupon-banner-sub">20%OFFクーポン</p>
+      </div>
+      <span class="ys-coupon-banner-arrow">→</span>
+    </a>
+
+    <div class="ys-pgrid">
+
+      <a href="https://item.rakuten.co.jp/yunth/ys-r129/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/ys-r129.jpg" alt="Yunth ピュアマスク Pure Mask 7枚入り" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth ピュアマスク Pure Mask 7枚入り</p>
+          <p class="ys-pcard-price"><span class="ys-num">6,820</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/10000007/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/10000007.jpg" alt="Yunth 生VC美白クリーム 30g" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth 生VC美白<sup class="ys-annot">※</sup>クリーム 30g</p>
+          <p class="ys-pcard-price"><span class="ys-num">3,960</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/yb-115-001/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/yb-115-001.jpg" alt="Yunth 生VCホワイトクリアフォーム 120g" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth 生VCホワイトクリアフォーム 120g</p>
+          <p class="ys-pcard-price"><span class="ys-num">3,960</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/yb-120-001/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/yb-120-001.jpg" alt="Yunth フュージョンクレンジング 120ml" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth フュージョンクレンジング 120ml</p>
+          <p class="ys-pcard-price"><span class="ys-num">3,289</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/112/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/112.jpg" alt="Yunth 生VCトーンアップUV 30g" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth 生VCトーンアップUV 30g</p>
+          <p class="ys-pcard-price"><span class="ys-num">2,970</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/yb-113-001/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/yb-113-001.jpg" alt="Yunth 美白ハンドセラム 35g" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth 美白<sup class="ys-annot">※</sup>ハンドセラム 35g</p>
+          <p class="ys-pcard-price"><span class="ys-num">1,980</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/yb-117-001/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/yb-117-001.jpg" alt="Yunth 生VCホワイト乳液 75ml" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth 生VCホワイト乳液 75ml</p>
+          <p class="ys-pcard-price"><span class="ys-num">3,960</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/10000001/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/10000001.jpg" alt="Yunth 美白シートマスク 22ml×6枚" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth 美白<sup class="ys-annot">※</sup>シートマスク 22ml×6枚</p>
+          <p class="ys-pcard-price"><span class="ys-num">1,980</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/111-01/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/111-01.jpg" alt="Yunth 生VC美白化粧水 120ml" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth 生VC美白<sup class="ys-annot">※</sup>化粧水 120ml</p>
+          <p class="ys-pcard-price"><span class="ys-num">3,960</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/yb-118-001/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/yb-118-001.jpg" alt="Yunth VAリンクルアイセラム 10ml" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth VAリンクルアイセラム 10ml</p>
+          <p class="ys-pcard-price"><span class="ys-num">4,950</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/yb-114-001/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/yb-114-001.jpg" alt="Yunth 薬用リップセラムVCP" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth 薬用リップセラムVCP</p>
+          <p class="ys-pcard-price"><span class="ys-num">1,650</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/yb-121-001/" class="ys-pcard" target="_blank" rel="noopener">
+        <div class="ys-pcard-img"><img src="images/product/yb-121-001.jpg" alt="Yunth マルチスクエアシートマスク" loading="lazy"></div>
+        <div class="ys-pcard-body">
+          <p class="ys-pcard-name">Yunth マルチスクエア<wbr>シートマスク</p>
+          <p class="ys-pcard-price"><span class="ys-num">2,640</span>円〜</p>
+          <span class="ys-pcard-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <p class="ys-footnote">※メラニンの生成を抑え、シミ・そばかすを防ぐ</p>
+
+    <!-- ▼秋のときめきダイアリー(9/4(金)20:00〜9/11(金)1:59) 最大60%OFFクーポンバナー。2つのクーポンチケットだけ画像を切り出して個別リンクにしている -->
+    <div class="ys-tokimeki-banner">
+      <img src="images/banner/tokimeki-top.jpg" alt="Rakutenスーパーセール 9/4(金)20:00〜9/11(金)1:59 Yunth 秋のときめきダイアリー 最大60%OFFクーポン">
+      <a href="https://coupon.rakuten.co.jp/getCoupon?getkey=VlhGQS1BSEFBLUhXREgtNzVBSQ--&rt=&rd=https://www.rakuten.ne.jp/gold/yunth/event/2609ss/index.html" target="_blank" rel="noopener" aria-label="秋のときめきダイアリー 50%OFFクーポンを獲得する">
+        <img src="images/banner/tokimeki-coupon1.jpg" alt="50%OFFクーポン 獲得する">
+      </a>
+      <img src="images/banner/tokimeki-gap.jpg" alt="">
+      <a href="https://coupon.rakuten.co.jp/getCoupon?getkey=QklOVy05MVdLLVYwTU8tVUFFVA--&rt=&rd=https://www.rakuten.ne.jp/gold/yunth/event/2609ss/index.html" target="_blank" rel="noopener" aria-label="秋のときめきダイアリー ビタミンCプラスセット60%OFFクーポンを獲得する">
+        <img src="images/banner/tokimeki-coupon2.jpg" alt="ビタミンCプラスセット60%OFFクーポン 獲得する">
+      </a>
+      <img src="images/banner/tokimeki-foot.jpg" alt="">
+    </div>
+
+    <div class="ys-wide-list">
+
+      <a href="https://coupon.rakuten.co.jp/getCoupon?getkey=WERGSC1ITldFLUFOV0ItU05RUA--&rt=&rd=https://www.rakuten.ne.jp/gold/yunth/event/2609ss/index.html" class="ys-wide-card" target="_blank" rel="noopener">
+        <div class="ys-wide-img">
+          <img src="images/product/yth-260.jpg" alt="Yunth 美顔器 Deep Boost" loading="lazy">
+        </div>
+        <div class="ys-wide-body">
+          <span class="ys-wide-badge">24%OFFクーポン</span>
+          <p class="ys-wide-name">Yunth 美顔器 Deep Boost</p>
+          <p class="ys-wide-price"><span class="ys-num">33,000</span>円〜</p>
+          <p class="ys-wide-period">クーポン期間：9/3(木)10:00〜9/11(金)1:59</p>
+          <span class="ys-wide-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/yb-119-001/" class="ys-wide-card" target="_blank" rel="noopener">
+        <div class="ys-wide-img">
+          <img src="images/product/yb-119-001.jpg" alt="Yunth 飲むビタミンC" loading="lazy">
+        </div>
+        <div class="ys-wide-body">
+          <span class="ys-wide-badge">スーパーDEAL<br>50%ポイント還元</span>
+          <p class="ys-wide-name">Yunth 飲むビタミンC</p>
+          <p class="ys-wide-price"><span class="ys-num">3,960</span>円〜</p>
+          <p class="ys-wide-period">対象期間：9/3(木)10:00〜9/11(金)1:59</p>
+          <span class="ys-wide-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+      <a href="https://item.rakuten.co.jp/yunth/yb-123-001/" class="ys-wide-card" target="_blank" rel="noopener">
+        <div class="ys-wide-img">
+          <img src="images/product/yb-123-001.jpg" alt="Yunth クッションファンデーション エアレス" loading="lazy">
+        </div>
+        <div class="ys-wide-body">
+          <span class="ys-wide-badge">スーパーDEAL<br>20%ポイント還元</span>
+          <p class="ys-wide-name">Yunth クッションファンデーション エアレス 15g</p>
+          <p class="ys-wide-price"><span class="ys-num">3,960</span>円〜</p>
+          <p class="ys-wide-period">対象期間：9/3(木)10:00〜9/11(金)1:59</p>
+          <span class="ys-wide-btn">詳細を見る →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+const COUPON_URL = "https://coupon.rakuten.co.jp/getCoupon?getkey=NU9HVS1aNUQwLU1LQ0wtUks3Tg--&rt=&rd=https://item.rakuten.co.jp/yunth/10000000/";
+document.querySelectorAll('[data-coupon]').forEach(btn=>{ btn.setAttribute('href', COUPON_URL); });
+
+/* 9/10(木) 0:00〜9/11(金) 1:59 期間の開始前は「開始まで」、開始後は「終了まで」に切り替わるカウントダウン */
+const CHANCE_START = new Date("2026-09-10T00:00:00+09:00");
+const CHANCE_END = new Date("2026-09-11T01:59:59+09:00");
+
+function pad(n){ return String(n).padStart(2,'0'); }
+
+function updateTimer(){
+  const now = new Date();
+  const timerBox = document.getElementById('ysTimer');
+  const label = document.getElementById('ysTimerLabel');
+
+  if(now >= CHANCE_END){
+    timerBox.classList.add('is-ended');
+    label.textContent = '9/10-9/11限定！先着3000名様セット終了';
+    return;
+  }
+
+  const beforeStart = now < CHANCE_START;
+  const target = beforeStart ? CHANCE_START : CHANCE_END;
+  label.textContent = beforeStart
+    ? '9/10-9/11限定！先着3000名様セット開始まで'
+    : '9/10-9/11限定！先着3000名様セット終了まで';
+
+  const diff = target - now;
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const mins = Math.floor((diff % 3600000) / 60000);
+  const secs = Math.floor((diff % 60000) / 1000);
+
+  document.getElementById('ysD').textContent = pad(days);
+  document.getElementById('ysH').textContent = pad(hours);
+  document.getElementById('ysM').textContent = pad(mins);
+  document.getElementById('ysS').textContent = pad(secs);
+}
+updateTimer();
+setInterval(updateTimer, 1000);
+
+/* ===================== FVの紙吹雪バースト演出 ===================== */
+(function(){
+  const layer = document.getElementById('ysHeroConfetti');
+  if(!layer){ return; }
+
+  const colors = ['#FF3D6F', '#F01D24', '#FFFFFF', '#FFD8E6', '#FFC72C'];
+  const count = 28;
+
+  function burst(){
+    const frameHeight = layer.parentElement.offsetHeight;
+    layer.innerHTML = '';
+    layer.classList.remove('is-play');
+
+    for(let i = 0; i < count; i++){
+      const piece = document.createElement('span');
+      piece.className = 'ys-confetti-piece';
+      const isRibbon = Math.random() < 0.35;
+      const size = isRibbon ? (3 + Math.random() * 2) : (6 + Math.random() * 6);
+      piece.style.width = size + 'px';
+      piece.style.height = (isRibbon ? size * 4 : size) + 'px';
+      piece.style.borderRadius = '2px';
+      piece.style.left = (Math.random() * 100) + '%';
+      piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+      piece.style.animationDuration = (1.6 + Math.random() * 1.2) + 's';
+      piece.style.animationDelay = (Math.random() * 0.7) + 's';
+      piece.style.setProperty('--ys-fall', (frameHeight * 0.7 + Math.random() * frameHeight * 0.3) + 'px');
+      piece.style.setProperty('--ys-drift', (Math.random() * 100 - 50) + 'px');
+      piece.style.setProperty('--ys-rot', (360 + Math.random() * 360) + 'deg');
+      layer.appendChild(piece);
+    }
+
+    void layer.offsetWidth;
+    layer.classList.add('is-play');
+  }
+
+  function scheduleNext(){
+    const delay = 5000 + Math.random() * 3000;
+    setTimeout(()=>{ burst(); scheduleNext(); }, delay);
+  }
+
+  window.addEventListener('load', ()=>{
+    burst();
+    scheduleNext();
+  });
+})();
+</script>
+</body>
+</html>
